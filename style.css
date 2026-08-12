@@ -17,7 +17,9 @@ body {
   overflow-x: hidden;
 }
 
-/* ENVELOPE SCREEN */
+/* =========================
+   ENVELOPE SCREEN
+========================= */
 
 #envelope-screen {
   min-height: 100vh;
@@ -97,7 +99,9 @@ body {
   transform: scale(0.97);
 }
 
-/* LETTER SCREEN */
+/* =========================
+   LETTER SCREEN
+========================= */
 
 #letter-screen {
   min-height: 100vh;
@@ -118,13 +122,33 @@ body {
   text-align: center;
 }
 
-/* FLOWER */
+/* =========================
+   FLOWER
+========================= */
 
 .flower-container {
   position: relative;
   width: 150px;
   height: 190px;
   margin: 0 auto 20px;
+
+  /* Gentle flower movement */
+  animation: flowerSway 3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes flowerSway {
+  0% {
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    transform: rotate(-3deg);
+  }
 }
 
 .carnation {
@@ -198,7 +222,9 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* STEM AND LEAVES */
+/* =========================
+   STEM AND LEAVES
+========================= */
 
 .stem {
   position: absolute;
@@ -231,7 +257,9 @@ body {
   transform: rotate(205deg);
 }
 
-/* LETTER TEXT */
+/* =========================
+   LETTER TEXT
+========================= */
 
 .card h1 {
   margin: 10px 0 25px;
@@ -248,4 +276,57 @@ body {
 .card .ending {
   margin-top: 30px;
   margin-bottom: 0;
-  font
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .envelope {
+    width: 220px;
+    height: 150px;
+  }
+
+  .envelope::before {
+    border-left-width: 110px;
+    border-right-width: 110px;
+    border-top-width: 80px;
+  }
+
+  .envelope::after {
+    border-left-width: 110px;
+    border-right-width: 110px;
+    border-bottom-width: 80px;
+  }
+
+  .heart {
+    top: 52px;
+    font-size: 38px;
+  }
+
+  .card {
+    padding: 35px 22px;
+  }
+
+  .card h1 {
+    font-size: 29px;
+  }
+
+  .card p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .flower-container {
+    animation: none;
+  }
+  }
